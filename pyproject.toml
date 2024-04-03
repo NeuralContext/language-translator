@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "language-translator"
+version = "0.1.0"
+description = "A program that translates code between various languages."
+authors = ["Markus Kreitzer <markus@nostoslabs.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ollama = "^0.1.8"
+requests = "^2.31.0"
+tqdm = "^4.66.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.3.0"
+pytest = "^8.1.1"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+translate = "language_translator.main:translate"
+async_translate = "language_translator.async_main:main"
